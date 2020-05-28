@@ -15,20 +15,20 @@ import javax.swing.JPanel;
 public class NastySuprise implements MouseListener {
 	JFrame f = new JFrame();
 	JPanel p = new JPanel();
-	JButton b1 = new JButton();
-	JButton b2 = new JButton();
+	JButton trick = new JButton();
+	JButton treat = new JButton();
 	JLabel l1 = new JLabel();
 	JLabel l2 = new JLabel(); 
 public void buildGoey() {
 
 	l1.setText("Trick");
 	l2.setText("Treat");
-	b1.addMouseListener(this);
-	b2.addMouseListener(this);
-	b1.add(l1);
-	b2.add(l2);
-	p.add(b1);
-	p.add(b2);
+	trick.addMouseListener(this);
+	treat.addMouseListener(this);
+	trick.add(l1);
+	treat.add(l2);
+	p.add(trick);
+	p.add(treat);
 	f.add(p);
 	f.pack();
 	f.setVisible(true);
@@ -58,7 +58,7 @@ public void mouseExited(MouseEvent e) {
 @Override
 public void mousePressed(MouseEvent e) {
 	// TODO Auto-generated method stub
-	if() {
+	if(e.getSource()==treat) {
 showPictureFromTheInternet("https://static-23.sinclairstoryline.com/resources/media/d60d4f1c-9fcc-4ae4-8058-05e885080e19-large16x9_momo2.PNG?1551379953599");
 	}
 	else {
