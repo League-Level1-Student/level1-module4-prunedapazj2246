@@ -9,16 +9,17 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class chuckleClicker implements ActionListener {
-
-	public void main(String[] args) {
+	JFrame f= new JFrame();
+	JPanel p = new JPanel();
+	JButton punchline = new JButton();
+	JButton joke = new JButton();
+	
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-makeButtons();
+		chuckleClicker chcl = new chuckleClicker();
+		chcl.makeButtons();
 	}
 	public void makeButtons() {
-		JFrame f= new JFrame();
-		JPanel p = new JPanel();
-		JButton punchline = new JButton();
-		JButton joke = new JButton();
 		punchline.setText("punchline");
 		joke.setText("joke");
 		punchline.addActionListener(this);
@@ -33,7 +34,12 @@ makeButtons();
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		JOptionPane.showMessageDialog(null, "hi");
+		if(e.getSource() == joke) {
+			JOptionPane.showMessageDialog(null, "I invented a new word!!");
+		}else {
+			JOptionPane.showMessageDialog(null, "Plagiarism");
+		}
 	}
 
 }
