@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Eclipse
+Icon=/headless/.local/share/umake/ide/eclipse/java.png
+Exec=/headless/.local/share/umake/ide/eclipse/eclipse
+Terminal=false
+Categories=Development;IDE;Programming

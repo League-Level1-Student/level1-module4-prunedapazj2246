@@ -55,8 +55,8 @@ tyTu.typingGame();
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		currentLetter
-		letter.updateUI();
+		currentLetter = generateRandomLetter();
+		letter.setText(String.valueOf(currentLetter));
 	}
 	@Override
 	public void keyTyped(KeyEvent arg0) {
