@@ -32,7 +32,7 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
    	 fortuneTellerImage = ImageIO.read(getClass().getResource("fortune teller.png"));
    	 // 2. Adjust the frameWidth and frameHeight variables to fit your image nicely (doesn’t need a new line of code)
      // 3. Complete the begin() method in the FortuneTellerRunner class
- 	 // 4. add a mouse listener to the frame
+ 	 frame.addMouseListener(this);// 4. add a mouse listener to the frame
 
     }
 
@@ -42,15 +42,15 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
     public void mousePressed(MouseEvent e) {
    	 int mouseX = e.getX();
    	 int mouseY = e.getY();
-   	 // 5. Print the mouseX variable
-
+   	 System.out.println(mouseX );// 5. Print the mouseX variable
+System.out.println(mouseY);
    	 // 6. Add the mouseY variable to the previous line so that it prints out too (no new line)
    	 // 7. Adjust your secret location co-ordinates here:
-   	 int secretLocationX = 0;
-   	 int secretLocationY = 0;
+   	 int secretLocationX = 100;
+   	 int secretLocationY = 345;
    	 /** If the mouse co-ordinates and secret location are close, we'll let them ask a question. */
    	 if (areClose(mouseX, secretLocationX) && areClose(mouseY, secretLocationY)) {
-   		 // 8. Get the user to enter a question for the fortune teller
+   		 JOptionPane.showInputDialog("Ask the fortune teller a question.");// 8. Get the user to enter a question for the fortune teller
 
    		 // 9. Find a spooky sound and put it in your default package (freesound.org)
    		 // AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
@@ -58,7 +58,21 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
 
    		 // 11. Use the pause() method below to wait until your music has finished
 
-   		 // 12. Insert your completed Magic 8 ball code here
+   		int ranNum = new Random().nextInt(4);
+   		System.out.println(ranNum);
+   		JOptionPane.showInputDialog("Ask a question to the Mafic 8 ball.");
+   		if(ranNum==0) {
+   			JOptionPane.showMessageDialog(null, "Yes");
+   		}
+   		if(ranNum==1) {
+   		JOptionPane.showMessageDialog(null, "No");	
+   		}
+   		if(ranNum==2) {
+		JOptionPane.showMessageDialog(null, "Maybe you should ask google?");
+   		}
+   		if(ranNum==3) {
+   			JOptionPane.showMessageDialog(null, "Not now I'm playing minecraft");
+   		}// 12. Insert your completed Magic 8 ball code here
 
    	 }
 

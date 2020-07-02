@@ -21,13 +21,12 @@ import javax.swing.JLabel;
 public class BookOfIllusions extends MouseAdapter {
 
 	JFrame f = new JFrame();// 1. Make a JFrame variable and initialize it using "new JFrame()"
-
+	JLabel ball;
 	public void run() {
 		f.setVisible(true);// 2. make the frame visible
 		f.setSize(500, 500);// 3. set the size of the frame
 		// 4. find 2 images and save them to your project’s default package
-		String soccerBall ="soccerBall.jpeg";// 5. make a variable to hold the location of your image. e.g. "illusion.jpg"
-		JLabel ball;// 6. create a variable of type "JLabel" but don’t initialize it yet
+		String soccerBall ="soccerBall.jpeg";// 5. make a variable to hold the location of your image. e.g. "illusion.jpg"// 6. create a variable of type "JLabel" but don’t initialize it yet
 		ball=loadImageFromComputer(soccerBall);// 7. use the "loadImage..." methods below to initialize your JLabel
 		f.add(ball);// 8. add your JLabel to the frame
 		f.pack();// 9. call the pack() method on the frame
@@ -35,12 +34,12 @@ public class BookOfIllusions extends MouseAdapter {
 	}
 
 	public void mousePressed(MouseEvent e) {
-		System.out.println("clivked!");// 11. Print "clicked!" to the console when the mouse is pressed
-		f.removeAll(); // 12. remove everything from the frame that was added earlier
-		String renegade = "ren.jpeg";// 13. load a new image like before (this is more than one line of code)
-		JLabel raider;
-		raider =loadImageFromComputer(renegade);
-		f.add(raider);
+		System.out.println("clicked!");// 11. Print "clicked!" to the console when the mouse is pressed
+		f.remove(ball); // 12. remove everything from the frame that was added earlier
+		String cake = "cake.jpeg";// 13. load a new image like before (this is more than one line of code)
+		JLabel c;
+		c =loadImageFromComputer(cake);
+		f.add(c);
 		f.pack();// 14. pack the frame
 	}
 
