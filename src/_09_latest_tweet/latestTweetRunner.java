@@ -1,10 +1,10 @@
-package _08_calculator;
+package _09_latest_tweet;
 
-public class CalculatorRunner {
+public class latestTweetRunner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new Calculator().run();
+new latestTweet().run(); 
 	}
 
 }
