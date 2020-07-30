@@ -5,21 +5,22 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class PigLatinTranslator implements MouseListener {
 	JFrame f = new JFrame();
 	JPanel p = new JPanel();
-	JTextField pigLatin = new JTextField(25);
+	JLabel pigLatin = new JLabel();
 	JButton translate = new JButton();
 	JTextField english = new JTextField(25);
 	public void run() {
 		translate.setText("translate");
 		translate.addMouseListener(this);
-		p.add(pigLatin);
-		p.add(translate);
 		p.add(english);
+		p.add(translate);
+		p.add(pigLatin);
 		f.add(p);
 		f.setTitle("Joaquin's Pig Latin Translator");
 		f.setVisible(true);
@@ -103,10 +104,11 @@ public class PigLatinTranslator implements MouseListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		isLetter();
-		pigWord(String.valueOf(pigLatin.getText()));
-		translate();
-		firstVowel();
+		
+		
+	String latin =translate(english.getText());
+		pigLatin.setText(latin);
+		f.pack();
 	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
